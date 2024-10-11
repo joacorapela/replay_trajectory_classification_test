@@ -1,0 +1,68 @@
+\documentclass{article}
+
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{natbib}
+\usepackage{apalike}
+
+\title{First decoding of a rat locations from hippocampal spiking activity}
+
+\author{Joaquin Rapela\thanks{j.rapela@ucl.ac.uk}}
+
+\begin{document}
+
+\maketitle
+
+\section{Behavior}
+
+A rat was run in the three-arm mazed depicted in Figure~\ref{fig:pos2D}.
+
+\begin{figure}
+    \begin{center}
+        \href{https://www.gatsby.ucl.ac.uk/~rapela/hippocampalDecoding/figures/pos2D.html}{\includegraphics[width=5in]{../../../replay_trajectory_classification_test/figures/pos2D.png}}
+		\caption{Positions occupied by the subject rat. Click on the figure to access its interactive version.}
+        \label{fig:pos2D}
+    \end{center}
+\end{figure}
+
+\section{Neural recordings}
+
+We used recordings from 104 hippocampal units of rat. Data provided by Dr.~Denovellis. Figure~\ref{fig:pos2DforSpikes} marks with dots positions were spikes ocurred.
+
+\begin{figure}
+    \begin{center}
+        \href{https://www.gatsby.ucl.ac.uk/~rapela/hippocampalDecoding/figures/pos2DForSpikesFrom50To80.html}{\includegraphics[width=5in]{../../../replay_trajectory_classification_test/figures/pos2DForSpikesFrom50To80.png}}
+		\caption{Spikes fired by 104 neurons. A colored dot indicates the position at which the colored-matched neuron fired a spike. Click on the figure to access its interactive version.}
+        \label{fig:pos2DforSpikes}
+    \end{center}
+\end{figure}
+
+\section{Results}
+
+We used the decoding algorithm by
+\citep{denovellisEtAl21}\footnote{\url{https://github.com/Eden-Kramer-Lab/replay_trajectory_classification}}
+on sorted spikes.
+
+This algorithm first estimates the place fields of the neurons
+(Figure~\ref{fig:placeFields}) and then use them to decode subject positions
+from spiking neural activity (Figure~\ref{fig:decodings}).
+
+\begin{figure}
+    \begin{center}
+        \href{https://www.gatsby.ucl.ac.uk/~rapela/hippocampalDecoding/figures/Jaq_03_16_sorted_spike_times_model_00000000_placeFields.html}{\includegraphics[width=5in]{../../../replay_trajectory_classification_test/figures/Jaq_03_16_sorted_spike_times_model_00000000_placeFields.png}}
+		\caption{Place fields in linearized positions from 104 hippocampal neurons of the subject rat. Click on the figure to access its interactive version.}
+        \label{fig:placeFields}
+    \end{center}
+\end{figure}
+
+\begin{figure}
+    \begin{center}
+        \href{https://www.gatsby.ucl.ac.uk/~rapela/hippocampalDecoding/figures/Jaq_03_16_sorted_spike_times_00000000_decoding.html}{\includegraphics[width=5in]{../../../replay_trajectory_classification_test/figures/Jaq_03_16_sorted_spike_times_model_00000000_decoding.png}}
+		\caption{Decodings. Red-yellow traces indicate time and linearized positions bins with larger probability. The cyan curve shows the subject positons. Click on the figure to access its interactive version.}
+        \label{fig:decodings}
+    \end{center}
+\end{figure}
+
+\bibliographystyle{apalike}
+\bibliography{other}
+\end{document}
