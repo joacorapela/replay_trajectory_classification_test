@@ -10,10 +10,10 @@ import plotly.graph_objects as go
 def main(argv):
     parser = argparse.ArgumentParser()
     parser.add_argument("--model_filename", type=str,
-                        default="/nfs/gatsbystor/rapela/bbsrc23Project/repos/replay_trajectory_classification_test/results/Jaq_03_16_sorted_spike_times_model_00000000.pkl",
+                        default="/nfs/gatsbystor/rapela/bbsrc23Project/repos/replay_trajectory_classification_test/results/Jaq_03_16_sorted_spike_times_00000000_model.pkl",
                         help="model filename")
     parser.add_argument("--fig_filename_pattern", type=str,
-                        default="../../figures/Jaq_03_16_sorted_spike_times_model_00000000_placeFields.{:s}",
+                        default="../../figures/Jaq_03_16_sorted_spike_times_00000000_placeFields.{:s}",
                         help="figure filename pattern")
     args = parser.parse_args()
 
@@ -37,6 +37,7 @@ def main(argv):
     fig.update_xaxes(title="Position (cm)")
     fig.update_yaxes(title="Neuron")
 
+    fig.write_image(fig_filename_pattern.format("png"))
     fig.write_html(fig_filename_pattern.format("html"))
 
     breakpoint()
