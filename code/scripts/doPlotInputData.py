@@ -98,7 +98,6 @@ def main(argv):
         clusterless_spike_waveform_features,
     ) = load_data(data_folder)
 
-    breakpoint()
 #     fig = go.Figure()
 #     trace = go.Scatter(x=position2D[:, 0], y=position2D[:, 1],
 #                        text=[f"Time: {t}" for t in position_time],
@@ -108,6 +107,7 @@ def main(argv):
 #     fig.add_trace(trace)
 #     fig.update_xaxes(title="X")
 #     fig.update_yaxes(title="Y")
+#     fig.write_image("../../figures/pos2D.png")
 #     fig.write_html("../../figures/pos2D.html")
 # 
 #     fig.show()
@@ -117,29 +117,32 @@ def main(argv):
 #     fig.add_trace(trace)
 #     fig.update_xaxes(title="Time (sec)")
 #     fig.update_yaxes(title="Position 1D")
+#     fig.write_image("../../figures/pos1D.png")
 #     fig.write_html("../../figures/pos1D.html")
 # 
 #     fig.show()
 # 
 #     fig = getSpikesTimesPlotOneTrial(spikes_times=sorted_spike_times)
 #     fig.update_yaxes(title="Spikes Times")
+#     fig.write_image("../../figures/spikesTimes.png")
 #     fig.write_html("../../figures/spikesTimes.html")
 # 
 #     fig.show()
 # 
-    pos1D_with_spike = [[] for i in range(len(sorted_spike_times))]
-    for i in range(len(sorted_spike_times)):
-        indices = np.array([np.abs(position_time - sorted_spike_times[i][j]).argmin()
-                            for j in range(len(sorted_spike_times[i]))])
-        pos1D_with_spike[i] = position1D[indices]
-
-    fig = getSpikesTimesPlotOneTrial(spikes_times=pos1D_with_spike,
-                                     xlabel="Linear Position")
-    fig.update_yaxes(title="Positions with Spikes")
-    fig.write_html("../../figures/pos1DForpikes.html")
-
-    fig.show()
-
+#     pos1D_with_spike = [[] for i in range(len(sorted_spike_times))]
+#     for i in range(len(sorted_spike_times)):
+#         indices = np.array([np.abs(position_time - sorted_spike_times[i][j]).argmin()
+#                             for j in range(len(sorted_spike_times[i]))])
+#         pos1D_with_spike[i] = position1D[indices]
+# 
+#     fig = getSpikesTimesPlotOneTrial(spikes_times=pos1D_with_spike,
+#                                      xlabel="Linear Position")
+#     fig.update_yaxes(title="Positions with Spikes")
+#     fig.write_image("../../figures/pos1DForpikes.png")
+#     fig.write_html("../../figures/pos1DForpikes.html")
+# 
+#     fig.show()
+# 
     pos2D_with_spike = [[] for i in range(len(sorted_spike_times))]
     for i in range(from_neuron, to_neuron):
         indices = np.array([np.abs(position_time - sorted_spike_times[i][j]).argmin()
@@ -155,6 +158,7 @@ def main(argv):
         fig.add_trace(trace)
     fig.update_xaxes(title="X")
     fig.update_yaxes(title="Y")
+    fig.write_image(f"../../figures/pos2DForSpikesFrom{from_neuron}To{to_neuron}.png")
     fig.write_html(f"../../figures/pos2DForSpikesFrom{from_neuron}To{to_neuron}.html")
 
     fig.show()
