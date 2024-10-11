@@ -18,7 +18,7 @@ def main(argv):
                         default="/nfs/gatsbystor/rapela/bbsrc23Project/dataFromEric/Jaq_03_16_data/Jaq_03_16_sorted_spike_times.pkl",
                         help="spikes filename")
     parser.add_argument("--results_filename", type=str,
-                        default="/nfs/gatsbystor/rapela/bbsrc23Project/repos/replay_trajectory_classification_test/results/Jaq_03_16_sorted_spike_times_model_00000000.pkl",
+                        default="/nfs/gatsbystor/rapela/bbsrc23Project/repos/replay_trajectory_classification_test/results/Jaq_03_16_sorted_spike_times_00000000_model.pkl",
                         help="results filename")
     args = parser.parse_args()
 

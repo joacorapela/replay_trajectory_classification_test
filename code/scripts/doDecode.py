@@ -13,10 +13,10 @@ def main(argv):
     parser.add_argument("--decoding_duration_secs", type=int,
                         help="duration of segment to decode (sec)", default=100)
     parser.add_argument("--model_filename", type=str,
-                        default="/nfs/gatsbystor/rapela/bbsrc23Project/repos/replay_trajectory_classification_test/results/Jaq_03_16_sorted_spike_times_model_00000000.pkl",
+                        default="/nfs/gatsbystor/rapela/bbsrc23Project/repos/replay_trajectory_classification_test/results/Jaq_03_16_sorted_spike_times_00000000_model.pkl",
                         help="spikes filename")
     parser.add_argument("--decoding_filename", type=str,
-                        default="/nfs/gatsbystor/rapela/bbsrc23Project/repos/replay_trajectory_classification_test/results/Jaq_03_16_sorted_spike_times_decoding_00000000.pkl",
+                        default="/nfs/gatsbystor/rapela/bbsrc23Project/repos/replay_trajectory_classification_test/results/Jaq_03_16_sorted_spike_times_00000000_decoding.pkl",
                         help="spikes filename")
     args = parser.parse_args()
 
