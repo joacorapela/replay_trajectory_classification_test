@@ -2,3 +2,8 @@
 *.swp
 
 figures/*
+docs/report111124/*
+!docs/report111124/Makefile
+!docs/report111124/report111124.tex
+!docs/report111124/report111124.pdf
+
