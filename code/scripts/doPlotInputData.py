@@ -155,7 +155,7 @@ def main(argv):
         fig.add_trace(trace)
     fig.update_xaxes(title="X")
     fig.update_yaxes(title="Y")
-    fig.write_html(f"../../figures/pos2DForpikesFrom{from_neuron}To{to_neuron}.html")
+    fig.write_html(f"../../figures/pos2DForSpikesFrom{from_neuron}To{to_neuron}.html")
 
     fig.show()
 
